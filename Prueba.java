@@ -6,6 +6,7 @@ public class Prueba {
         Scanner sc = new Scanner(System.in);
         //contador
         int count = 0;
+        int totalProductos = 0;
         //Listas
         String reporteGeneral = "Todos los productos: \n";
         String reporteElectronico = "Productos Electronicos: \n";
@@ -16,18 +17,19 @@ public class Prueba {
         double[] sumatorias = new double[8];
        
         //arreglo de productos
-        Producto[] productos = new Producto[1];
+        Producto[] productos = new Producto[10];
         //LLenar el arreglo de productos
         do{
-            System.out.println("Ingrese el tipo de Producto: "
+            System.out.println("\nIngrese el tipo de Producto: "
             + "\n" + "1)Electronico"+ "\n" + "2)Perecedero"+ "\n" + "3)Papeleria"
             + "\n" + "4)Salir"+ "\n");
             int tipo = sc.nextInt();
             if(tipo == 4){
                 break;
             }
-            System.out.println("Ingresa el nombre del productoo:");
+            System.out.println("Ingresa el nombre del producto "+count+":");
             String nombre = sc.next();
+            sc.nextLine();
             System.out.println();
             System.out.println("Ingresa el precio del producto");
             double precio = sc.nextDouble();
@@ -76,6 +78,8 @@ public class Prueba {
                 sumatorias[0] += pr.calculaPrecioFinal();
                 //El indice 1 es para el descuento total
                 sumatorias[1] += pr.calcularDescuento();
+                //total de productos
+                totalProductos++;
             }
         }
 
@@ -113,6 +117,10 @@ public class Prueba {
             }
         }
 
+        //Total de productos
+        System.out.println("Total de productos: " + totalProductos);
+
+        //Sumatorias
         System.out.println("Precio total de todos los productos: " + sumatorias[0]+"\n");
         System.out.println("Descuento total de todos los productos: " +sumatorias[1]+"\n");
         System.out.println("Precio total de los productos Electronicos: " + sumatorias[2]+"\n");
