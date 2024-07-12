@@ -27,7 +27,7 @@ public class Prueba {
             if(tipo == 4){
                 break;
             }
-            System.out.println("Ingresa el nombre del producto "+count+":");
+            System.out.println("Ingresa el nombre del producto "+(count+1)+":");
             String nombre = sc.next();
             sc.nextLine();
             System.out.println();
